@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<meta http-equiv="Content-Security-Policy" 
+    content="default-src 'self' data: gap: 
+            https://ssl.gstatic.com 'unsafe-eval' 
+            http://radio.mendiolaza.com.ar 
+            http://mendiolaza.com.ar; 
+      style-src 'self' 'unsafe-inline' http://radio.mendiolaza.com.ar http://mendiolaza.com.ar; 
+      media-src *; 
+      img-src 'self' data: content: http://radio.mendiolaza.com.ar http://mendiolaza.com.ar;">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <title>Radio Mendiolaza</title>
+    </head>
+    <body>
+        <div class="app">
+            <h1>Radio Mendiolaza</h1>
+
+<img id="logocentral" src="" style="max-width: 90%"; 
+                display: block;
+                margin-left: auto;
+                margin-right: auto/>
+
+<audio controls>
+  <source id="streamaudio" src="horse.ogg" type="audio/ogg">
+  Tu navegador no soporta la reproducción de este audio. Prueba con Google Chrome o Firefox (actualziados).
+</audio>
+
+    <h3 id="appversion"></h3>
+        </div>
+        <script type="text/javascript" src="version.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+    </body>
+</html>
