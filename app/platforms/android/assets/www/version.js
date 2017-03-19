@@ -1,2 +1,2 @@
 /*AUTOGENERADO POR EL COMPILADOR*/
-var cordova_app_version = "1.1.120";
+var cordova_app_version = "1.1.121";

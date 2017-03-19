@@ -5,7 +5,10 @@
     content="default-src 'self' data: gap: 
             https://ssl.gstatic.com 'unsafe-eval' 
             http://radio.mendiolaza.com.ar 
-            http://mendiolaza.com.ar; 
+            http://mendiolaza.com.ar
+            https://ajax.googleapis.com
+            http://192.168.0.105 
+            http://192.168.0.105:8000; 
       style-src 'self' 'unsafe-inline' http://radio.mendiolaza.com.ar http://mendiolaza.com.ar; 
       media-src *; 
       img-src 'self' data: content: http://radio.mendiolaza.com.ar http://mendiolaza.com.ar;">
@@ -24,13 +27,18 @@
                 margin-left: auto;
                 margin-right: auto/>
 
-<audio controls>
-  <source id="streamaudio" src="horse.ogg" type="audio/ogg">
+<audio controls id="audioctrl">
+  <source id="streamaudio" src="" type="audio/ogg">
   Tu navegador no soporta la reproducción de este audio. Prueba con Google Chrome o Firefox (actualziados).
 </audio>
 
     <h3 id="appversion"></h3>
+
+    <div id="mylogs"></div>
+
         </div>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
         <script type="text/javascript" src="version.js"></script>
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
