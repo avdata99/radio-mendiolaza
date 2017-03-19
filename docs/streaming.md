@@ -1,4 +1,7 @@
 ### Instalar todo
+
+Se instaló en el equipo Ubuntu Server LTS de 32 bits.  
+
 ```
 sudo apt-get install icecast2 ices2 vorbis-tools  
 sudo systemctl enable icecast2
@@ -8,11 +11,7 @@ mkdir /var/log/ices2
 ```
 
 ### Archivos de configuración
-Icecast  
-/etc/icecast2/icecast.xml  
-
-Ices2  
-/etc/ices2/ices-playlist.xml  
+Pueden verse en [etc](etc/).  
 
 ### Comandos
 iniciar el ices de la radio  
@@ -37,6 +36,7 @@ sudo /etc/init.d/icecast2 stop|start
 
 Reiniciar todo y ver logs al toque
 ```
+modprobe snd-pcm-oss
 /etc/init.d/icecast2 stop
 /etc/init.d/icecast2 start
 ices2 /etc/ices2/ices-playlist.xml &
