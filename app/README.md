@@ -1,3 +1,4 @@
 ## Aplicación móvil
 
-Hecha en HTML5/JS con la librería _cordova_
+Hecha en HTML5/JS con la librería _cordova_.  
+

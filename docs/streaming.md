@@ -1,19 +1,21 @@
 ### Instalar todo
-sudo apt-get install icecast2 ices2 vorbis-tools
+```
+sudo apt-get install icecast2 ices2 vorbis-tools  
 sudo systemctl enable icecast2
 mkdir /etc/ices2/
 cp /usr/share/doc/ices2/examples/ices-playlist.xml /etc/ices2/ 
 mkdir /var/log/ices2
+```
 
 ### Archivos de configuración
-Icecast
-/etc/icecast2/icecast.xml
+Icecast  
+/etc/icecast2/icecast.xml  
 
-Ices2
-/etc/ices2/ices-playlist.xml
+Ices2  
+/etc/ices2/ices-playlist.xml  
 
 ### Comandos
-iniciar el ices de la radio
+iniciar el ices de la radio  
 ```
 ices2 /etc/ices2/ices-playlist.xml &
 ```
