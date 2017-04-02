@@ -9,6 +9,7 @@ var app = {
     whatsAppNice: "(0351) 550 57 81",
 
     initialize: function() {
+        this.tolog('fn Initializate');
         document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
     },
 
@@ -18,8 +19,8 @@ var app = {
     // 'pause', 'resume', etc.
     onDeviceReady: function() {
         // listo el dispositivo
-        console.log('Dispositivo listo: ');
-        app.initapp();    
+        this.tolog('fn OnDeviceReady');
+        app.initapp();
     },
 
     initapp: function(){
@@ -28,9 +29,12 @@ var app = {
         $("#logocentral").attr("src", this.logoSrc);
         $("#appversion").html("Versión: " + cordova_app_version);
         this.loadPlayer();
+        // si cargo todo OK, lo cierro
+        $("#mylogs").hide();
     },
 
     loadPlayer: function() {
+        this.tolog('fn loadPlayer');
         $("#audiodiv").append('<audio controls id="audioctrl"></audio>');
         $("#audioctrl").append('<source id="streamaudio" src="' + this.streamingSrc +'" type="audio/ogg">Tu navegador no soporta el audio');
         $("#audioctrl")[0].play();
@@ -38,7 +42,8 @@ var app = {
     },
 
     getNetworkState: function() {
-        netState = this.getNetworkState($("#audioctrl")[0].networkState);
+        this.tolog('fn getNetworkState');
+        netState = this.retNetworkState($("#audioctrl")[0].networkState);
         this.tolog(netState);
     },
 
@@ -51,7 +56,7 @@ var app = {
         this.tolog('Player reloaded');
     },
 
-    getNetworkState: function(ns) {
+    retNetworkState: function(ns) {
         if (ns == 0) return "0 = NETWORK_EMPTY - audio/video has not yet been initialized";
         if (ns == 1) return "1 = NETWORK_IDLE - audio/video is active and has selected a resource, but is not using the network"
         if (ns == 2) return "2 = NETWORK_LOADING - browser is downloading data"
@@ -64,6 +69,7 @@ var app = {
 };
 
 $( document ).ready(function() {
+    app.tolog('DOM Ready');
     var inCordova = document.URL.indexOf( 'http://' ) === -1 && document.URL.indexOf( 'https://' ) === -1;
     if (inCordova) {
         app.initialize();    
@@ -73,16 +79,20 @@ $( document ).ready(function() {
         app.initapp();
     }
 
+    app.tolog('DOM Ready 2');
     $("#btnReloadPlayer").on("click", function(){
         app.reloadPlayer();
     });
 
+    app.tolog('DOM Ready 3');
     $("#whatsappButton").attr("href", "whatsapp://call?number=" + app.whatsAppNice);
     $("#facebookButton").attr("href", app.facebookURL);
 
+    app.tolog('DOM Ready 4');
     $("#news").html("WhatsApp / SMS: " + app.whatsAppNice);
+    app.tolog('DOM Ready 5');
     $("#appversion").on("click", function(){
         $("#mylogs").toggle();
     });
+    app.tolog('DOM Ready 6');
 });
-
