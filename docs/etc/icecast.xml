@@ -108,20 +108,7 @@
     <!-- setting this makes all relays on-demand unless overridden, this is
          useful for master relays which do not have <relay> definitions here.
          The default is 0 -->
-    <!--<relays-on-demand>1</relays-on-demand>-->
-
-    
-    <relay>
-        <server>108.163.175.18</server>
-        <port>8019</port>
-        <mount>/radio.ogg</mount>
-        <local-mount>/radio.ogg</local-mount>
-        <on-demand>0</on-demand>
-
-        <relay-shoutcast-metadata>0</relay-shoutcast-metadata>
-    </relay>
-    
-
+    <!--<relays-on-demand>1</relays-on-demand>-->    
 
     <!-- Mountpoints
          Only define <mount> sections if you want to use advanced options,

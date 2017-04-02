@@ -10,6 +10,10 @@ cp /usr/share/doc/ices2/examples/ices-playlist.xml /etc/ices2/
 mkdir /var/log/ices2
 ```
 
+**ices2** permite tomar una fuente de audio (en nuestro caso la placa de sonido) y enviarla a algun servidor.  
+En nuestro caso, al no tener una IP fija en la radio, lo enviamos hasta un servidor IceCast externo en un servidor de hosting.  
+De todas formas esto podría evitarse simplemente enviando el _ices_ a _localhost_ con un servidor IceCast local.  
+
 ### Archivos de configuración
 Pueden verse en [etc](etc/).  
 

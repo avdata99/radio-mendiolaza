@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+    <meta charset="utf-8" /> 
 <meta http-equiv="Content-Security-Policy" 
     content="default-src 'self' data: gap: 
             https://ssl.gstatic.com 'unsafe-eval' 
@@ -8,31 +9,41 @@
             http://mendiolaza.com.ar
             https://ajax.googleapis.com
             http://108.163.175.18
-            http://108.163.175.18:8019; 
-      style-src 'self' 'unsafe-inline' http://radio.mendiolaza.com.ar http://mendiolaza.com.ar; 
+            http://108.163.175.18:8019
+            https://cdnjs.cloudflare.com; 
+      style-src 'self' 'unsafe-inline' http://radio.mendiolaza.com.ar
+                http://mendiolaza.com.ar
+                https://cdnjs.cloudflare.com; 
       media-src *; 
       img-src 'self' data: content: http://radio.mendiolaza.com.ar http://mendiolaza.com.ar;">
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
         <link rel="stylesheet" type="text/css" href="css/index.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <title>Radio Mendiolaza</title>
     </head>
     <body>
         <div class="app">
-            <h1>Radio Mendiolaza</h1>
 
-<img id="logocentral" src="" style="max-width: 90%"; 
-                display: block;
-                margin-left: auto;
-                margin-right: auto/>
+        <img id="logocentral" src=""/>
 
-<div id='audiodiv'>
+            <div id='audiodiv'></div>
 
-</div>
-    <h3 id="appversion"></h3>
+            <div id='news'></div>
 
-    <div id="mylogs"></div>
+            <div id="socialDiv">
+                <a target="_blank" style="font-size:28px" id="btnReloadPlayer"> <i class="fa fa-refresh"></i></a>
+                <a target="_blank" style="font-size:28px" id="facebookButton"> <i class="fa fa-facebook"></i></a>
+                <a style="font-size:28px" id="whatsappButton" > <i class="fa fa-whatsapp"></i></a>
+                
+            </div>
+            <h3 id="appversion"></h3>
+
+            <div id="mylogs" style="display:none">
+                <p>Aplicación desarrollada por Asociación Civil Sayana</p>
+
+            </div>
 
         </div>
         

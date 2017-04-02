@@ -4,7 +4,9 @@ var app = {
 
     streamingSrc: "http://108.163.175.18:8019/radio.ogg", // "http://radio.data99.com.ar:8000/radio.ogg",
     logoSrc: "http://mendiolaza.com.ar/wp-content/uploads/2017/03/logo-radio-mendiolaza.jpg",
-
+    facebookURL: "https://www.facebook.com/967-Primera-radio-de-Mendiolaza-1186641901350126/",
+    whatsAppNumber: "+5493515505781",
+    whatsAppNice: "(0351) 550 57 81",
 
     initialize: function() {
         document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
@@ -25,11 +27,28 @@ var app = {
         this.tolog("Iniciando APP versión: " + cordova_app_version );
         $("#logocentral").attr("src", this.logoSrc);
         $("#appversion").html("Versión: " + cordova_app_version);
+        this.loadPlayer();
+    },
+
+    loadPlayer: function() {
         $("#audiodiv").append('<audio controls id="audioctrl"></audio>');
         $("#audioctrl").append('<source id="streamaudio" src="' + this.streamingSrc +'" type="audio/ogg">Tu navegador no soporta el audio');
         $("#audioctrl")[0].play();
+        this.getNetworkState();
+    },
+
+    getNetworkState: function() {
         netState = this.getNetworkState($("#audioctrl")[0].networkState);
         this.tolog(netState);
+    },
+
+    reloadPlayer() {
+        this.tolog('Reloading player');
+        $("#audiodiv").hide();
+        $("#audioctrl").remove();
+        this.loadPlayer();
+        $("#audiodiv").show();
+        this.tolog('Player reloaded');
     },
 
     getNetworkState: function(ns) {
@@ -52,6 +71,18 @@ $( document ).ready(function() {
     else {
         // empezar directo sin esperar el evento de Cordova
         app.initapp();
-    }  
+    }
+
+    $("#btnReloadPlayer").on("click", function(){
+        app.reloadPlayer();
+    });
+
+    $("#whatsappButton").attr("href", "whatsapp://call?number=" + app.whatsAppNice);
+    $("#facebookButton").attr("href", app.facebookURL);
+
+    $("#news").html("WhatsApp / SMS: " + app.whatsAppNice);
+    $("#appversion").on("click", function(){
+        $("#mylogs").toggle();
+    });
 });
 

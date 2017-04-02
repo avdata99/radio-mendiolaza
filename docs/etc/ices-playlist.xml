@@ -67,7 +67,7 @@
             <!-- Server details:
                 You define hostname and port for the server here, along with
                 the source password and mountpoint.  -->
-            <hostname>localhost</hostname>
+            <hostname>localhost para IceCast local o IP del servidor de IceCast en IP fija</hostname>
             <port>8000</port>
             <password>XXXXXX</password>
             <mount>/radio.ogg</mount>
