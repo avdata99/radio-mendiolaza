@@ -2,7 +2,7 @@
 var app = {
     // Application Constructor
 
-    streamingSrc: "http://192.168.0.105:8000/radio.ogg", // "http://radio.data99.com.ar:8000/radio.ogg",
+    streamingSrc: "http://108.163.175.18:8019/radio.ogg", // "http://radio.data99.com.ar:8000/radio.ogg",
     logoSrc: "http://mendiolaza.com.ar/wp-content/uploads/2017/03/logo-radio-mendiolaza.jpg",
 
 
@@ -25,7 +25,8 @@ var app = {
         this.tolog("Iniciando APP versión: " + cordova_app_version );
         $("#logocentral").attr("src", this.logoSrc);
         $("#appversion").html("Versión: " + cordova_app_version);
-        $("#streamaudio").attr("src", this.streamingSrc);
+        $("#audiodiv").append('<audio controls id="audioctrl"></audio>');
+        $("#audioctrl").append('<source id="streamaudio" src="' + this.streamingSrc +'" type="audio/ogg">Tu navegador no soporta el audio');
         $("#audioctrl")[0].play();
         netState = this.getNetworkState($("#audioctrl")[0].networkState);
         this.tolog(netState);
