@@ -3,7 +3,7 @@ var app = {
     // Application Constructor
 
     streamingSrc: "http://108.163.175.18:8019/radio.ogg", // "http://radio.data99.com.ar:8000/radio.ogg",
-    logoSrc: "http://mendiolaza.com.ar/wp-content/uploads/2017/03/logo-radio-mendiolaza.jpg",
+    logoSrc: "res/logo-radio-mendiolaza.jpg",
     facebookURL: "https://www.facebook.com/967-Primera-radio-de-Mendiolaza-1186641901350126/",
     whatsAppNumber: "+5493515505781",
     whatsAppNice: "(0351) 550 57 81",
@@ -67,6 +67,15 @@ var app = {
     },
 
 };
+
+app.tolog('Zero');
+
+function dcl() {
+    app.tolog('Dom Content Loaded');    
+}
+
+document.addEventListener("DOMContentLoaded", dcl);
+
 
 $( document ).ready(function() {
     app.tolog('DOM Ready');
