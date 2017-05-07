@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<ices>
+    
+    <background>0</background> <!-- run in background -->
+    <logpath>/var/log/ices2</logpath>
+    <logfile>ices2.log</logfile>
+    <loglevel>4</loglevel> <!-- 1=error,2=warn,3=info,4=debug -->
+	<logsize>2048</logsize>
+    <consolelog>0</consolelog> <!-- set this to 1 to log to the console instead of to the file above -->
+
+    <stream>
+        <metadata>
+            <name>Radio Mendiolaza 96.7</name>
+            <genre>Radio local</genre>
+            <description>Noticias y cultura en Mendiolaza</description>
+        </metadata>
+
+    <input>
+		<module>alsa</module>
+        <param name="device">hw:0,0</param>
+        <param name="rate">44100</param>
+        <param name="channels">2</param>
+		
+    </input>
+
+        <instance>
+            <!-- Server details: You define hostname and port for the server here, along with the source password and mountpoint.  -->
+            <hostname>108.163.175.18</hostname>
+            <port>8019</port>
+            <password>4radioR16</password>
+            <mount>/radio.ogg</mount>
+            <reconnectdelay>2</reconnectdelay>
+            <reconnectattempts>5</reconnectattempts> 
+            <maxqueuelength>80</maxqueuelength>
+            <encode>  
+                <nominal-bitrate>64000</nominal-bitrate> <!-- bps. e.g. 64000 for 64 kbps -->
+                <samplerate>44100</samplerate>
+                <channels>2</channels>
+            </encode>
+        </instance>
+    </stream>
+</ices>

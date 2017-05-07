@@ -6,6 +6,7 @@ Se instaló en el equipo Ubuntu Server LTS de 32 bits.
 sudo apt-get install icecast2 ices2 vorbis-tools upstart
 sudo systemctl enable icecast2
 mkdir /etc/ices2/
+mkdir /var/log/ices2/
 cp /usr/share/doc/ices2/examples/ices-playlist.xml /etc/ices2/ 
 mkdir /var/log/ices2
 ```
