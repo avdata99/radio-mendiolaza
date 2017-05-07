@@ -26,8 +26,8 @@
         <instance>
             <!-- Server details: You define hostname and port for the server here, along with the source password and mountpoint.  -->
             <hostname>108.163.175.18</hostname>
-            <port>8019</port>
-            <password>4radioR16</password>
+            <port>xxxx</port>
+            <password>xxxxxxx</password>
             <mount>/radio.ogg</mount>
             <reconnectdelay>2</reconnectdelay>
             <reconnectattempts>5</reconnectattempts> 
