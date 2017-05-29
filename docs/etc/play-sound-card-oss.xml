@@ -27,7 +27,7 @@
             <!-- Server details: You define hostname and port for the server here, along with the source password and mountpoint.  -->
             <hostname>108.163.175.18</hostname>
             <port>xxxx</port>
-            <password>xxxxx</password>
+            <password>xxxxxxx</password>
             <mount>/radio.ogg</mount>
             <reconnectdelay>2</reconnectdelay>
             <reconnectattempts>5</reconnectattempts> 
